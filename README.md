@@ -88,29 +88,4 @@ npm run dev
 
 ## Screenshots
 
-- Add your screenshots here
-- Example: `screenshots/home.png`
-
-## Deployment Links
-
-- Frontend (Vercel): <add-your-link>
-- Backend (Render): <add-your-link>
-
-## Deployment Steps
-
-### Frontend on Vercel
-
-1. Push the repository to GitHub.
-2. In Vercel, import the repo and select the `frontend` folder.
-3. Set the build command to `npm run build` and output to `dist`.
-4. Add env var: `VITE_API_BASE_URL` pointing to the Render backend URL.
-5. Deploy.
-
-### Backend on Render
-
-1. Create a new Web Service in Render.
-2. Select the repo and set the root directory to `backend`.
-3. Build command: `npm install`
-4. Start command: `npm start`
-5. Add env vars: `PORT` (Render provides) and `INDIA_POST_API_BASE`.
-6. Deploy.
+![app image](image.png)
