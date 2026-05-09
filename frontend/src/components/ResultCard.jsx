@@ -14,11 +14,6 @@ export default function ResultCard({ item, mode }) {
         <p>
           <span className="text-slate-400">State:</span> {item.state}
         </p>
-        {mode === "pincode" && (
-          <p>
-            <span className="text-slate-400">Delivery:</span> {item.deliveryStatus}
-          </p>
-        )}
       </div>
     </div>
   );

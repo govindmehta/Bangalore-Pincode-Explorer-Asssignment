@@ -24,8 +24,7 @@ router.get("/pincode/:pin", async (req, res) => {
     const results = payload.PostOffice.map((office) => ({
       name: office.Name,
       district: office.District,
-      state: office.State,
-      deliveryStatus: office.DeliveryStatus
+      state: office.State
     }));
 
     return res.json({ message: "Success", data: results });
@@ -49,7 +48,16 @@ router.get("/area/:name", async (req, res) => {
       return res.status(404).json({ message: "No results found" });
     }
 
-    const results = payload.PostOffice.map((office) => ({
+    const normalizedQuery = name.toLowerCase();
+    const exactMatches = payload.PostOffice.filter(
+      (office) => office?.Name?.toLowerCase() === normalizedQuery
+    );
+
+    if (!exactMatches.length) {
+      return res.status(404).json({ message: "No exact match found" });
+    }
+
+    const results = exactMatches.map((office) => ({
       pincode: office.Pincode,
       name: office.Name,
       district: office.District,
